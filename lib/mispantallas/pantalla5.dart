@@ -9,8 +9,8 @@ class Pantalla5 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Datos de Facturación"),
-        backgroundColor: Colors.orange[400],
+        title: const Text("Datos de pago"),
+        backgroundColor: Colors.blue[800],
         actions: const [Icon(Icons.security), Icon(Icons.credit_card)],
       ),
       body: Padding(

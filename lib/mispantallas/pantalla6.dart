@@ -8,11 +8,7 @@ class Pantalla6 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Pedido Confirmado"),
-        backgroundColor: Colors.green[700],
-        actions: const [Icon(Icons.check), Icon(Icons.star_border)],
-      ),
+     
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
