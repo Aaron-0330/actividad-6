@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// IMPORTANTE: Esta línea conecta con tu archivo pantalla4.dart
+import 'pantalla4.dart'; 
 
 class Pantalla3 extends StatelessWidget {
   const Pantalla3({super.key});
@@ -16,7 +18,7 @@ class Pantalla3 extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // --- 1. CONTENEDOR DE IMAGEN (MARCO NEGRO INDEPENDIENTE) ---
+            // --- 1. CONTENEDOR DE IMAGEN (MARCO NEGRO) ---
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(10),
@@ -33,18 +35,17 @@ class Pantalla3 extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-            // --- 2. UN SOLO MARCO PARA TODA LA INFORMACIÓN DEL PRODUCTO ---
+            // --- 2. MARCO DE INFORMACIÓN DEL PRODUCTO ---
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(15),
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.black, width: 2), // El mismo marco negro
+                border: Border.all(color: Colors.black, width: 2),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Fila de Nombre y Precio
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -57,7 +58,7 @@ class Pantalla3 extends StatelessWidget {
                   
                   const SizedBox(height: 12),
 
-                  // Etiqueta de Stock (Verde)
+                  // Etiqueta de Stock
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
@@ -81,7 +82,7 @@ class Pantalla3 extends StatelessWidget {
 
             const Spacer(),
 
-            // --- 3. EL BOTÓN DE ACCIÓN ---
+            // --- 3. BOTÓN DE ACCIÓN (REDIRECCIÓN) ---
             _miBotonPersonalizado(context),
           ],
         ),
@@ -92,9 +93,10 @@ class Pantalla3 extends StatelessWidget {
   Widget _miBotonPersonalizado(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        // Al dar clic, nos manda a la Pantalla 4
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const Pantalla4Destino()),
+          MaterialPageRoute(builder: (context) => const Pantalla4()),
         );
       },
       child: Container(
@@ -111,17 +113,6 @@ class Pantalla3 extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
-}
-
-class Pantalla4Destino extends StatelessWidget {
-  const Pantalla4Destino({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Carrito")), 
-      body: const Center(child: Text("Pantalla 4 - Carrito de Compras"))
     );
   }
 }
